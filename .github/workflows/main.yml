@@ -1,0 +1,17 @@
+name: Deploy to Render
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]  # Triggers when the PR is opened, updated, or reopened.
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3  # Checkout the code from your repository.
+
+    - name: Trigger Render Deploy Hook
+      run: |
+        curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}  # Use the secret URL stored in GitHub

@@ -12,6 +12,7 @@ on:
 jobs:
   cypress-tests:
     if: github.event_name == 'pull_request'
+
     name: Run Cypress Component Tests
     runs-on: ubuntu-latest
 

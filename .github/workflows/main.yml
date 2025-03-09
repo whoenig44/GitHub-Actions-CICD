@@ -1,11 +1,10 @@
 name: Deploy to Render
 
 on:
-    push:
-      branches: [main]
     pull_request:
       branches:
-        - main
+        - feature
+        - develop
        
 jobs:
     ci:

@@ -11,7 +11,7 @@ on:
 
 jobs:
   cypress-tests:
-    if: github.event_name == 'pull_request' && github.base_ref == 'develop'
+    if: github.event_name == 'pull_request' && github.base_ref == 'develop' || github.base_ref == 'feature'
     name: Run Cypress Component Tests
     runs-on: ubuntu-latest
 
